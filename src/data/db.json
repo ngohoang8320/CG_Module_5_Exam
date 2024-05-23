@@ -1,0 +1,40 @@
+{
+    "orders": [
+        {
+            "id": 200,
+            "buyDate": "2020-03-21",
+            "totalPrice": 1000,
+            "quantity": 1,
+            "product": {
+                "id": 1,
+                "name": "Iphone X",
+                "price": 1000,
+                "type": "Điện Thoại"
+            }
+        },
+        {
+            "id": 201,
+            "buyDate": "2020-03-15",
+            "totalPrice": 2400,
+            "quantity": 2,
+            "product": {
+                "id": 2,
+                "name": "Samsung Note 10",
+                "price": 1200,
+                "type": "Điện Thoại"
+            }
+        },
+        {
+            "id": 202,
+            "buyDate": "2019-11-01",
+            "totalPrice": 1200,
+            "quantity": 3,
+            "product": {
+                "id": 3,
+                "name": "Dell Vostrol 5320",
+                "price": 400,
+                "type": "Laptop"
+            }
+        }
+    ]
+}
