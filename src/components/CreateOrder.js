@@ -1,10 +1,11 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 import '../assests/css/CreateOrder.css';
 import { persistOrder } from "../services/OrderService";
+import { getAllProduct } from "../services/ProductService";
 
 function CreateOrder() {
     const [form, setForm] = useState({
@@ -19,6 +20,16 @@ function CreateOrder() {
             type: "",
         },
     });
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        getProds();
+    }, []);
+
+    const getProds = async () => {
+        const prodList = await getAllProduct();
+        setProducts(prodList);
+    }
 
     const navigation = useNavigate();
 
@@ -52,6 +63,7 @@ function CreateOrder() {
             <div className="container">
                 <h2>Thêm mới đơn hàng</h2>
                 <Formik
+                    enableReinitialize
                     initialValues={form}
                     onSubmit={submitHandler}
                     validationSchema={validationSchema}
@@ -120,6 +132,21 @@ function CreateOrder() {
                             type="text"
                         />
                         <ErrorMessage name="product.type" component="span" className="error-message" />
+
+                        <Field
+                            className="input-create"
+                            name="product"
+                            as="select"
+                        >
+                            <option value="">Vui lòng chọn sản phẩm</option>
+                            {
+                                products.map((prod) => {
+                                    return (
+                                        <option key={prod.id} value={JSON.stringify(prod)}>{prod.name}</option>
+                                    )
+                                })
+                            }
+                        </Field>
 
                         <button type="submit" className="create-button">
                             Tạo mới

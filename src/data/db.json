@@ -36,5 +36,37 @@
                 "type": "Laptop"
             }
         }
+    ],
+    "products": [
+        {
+            "id": 3,
+            "name": "Dell Vostrol 5320",
+            "price": 400,
+            "type": "Laptop"
+        },
+        {
+            "id": 2,
+            "name": "Samsung Note 10",
+            "price": 1200,
+            "type": "Điện Thoại"
+        },
+        {
+            "id": 1,
+            "name": "Iphone X",
+            "price": 1000,
+            "type": "Điện Thoại"
+        },
+        {
+            "id": 4,
+            "name": "Xiaomi 10X",
+            "price": 200,
+            "type": "Điện Thoại"
+        },
+        {
+            "id": 5,
+            "name": "Tosiba",
+            "price": 1500,
+            "type": "Tủ lạnh"
+        }
     ]
 }
