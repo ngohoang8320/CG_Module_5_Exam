@@ -28,7 +28,7 @@ function CreateOrder() {
         id: Yup.number().required("This field have to be filled!"),
         buyDate: Yup.date().max(today, "Date cannot be in the future").required("This field have to be filled!"),
         totalPrice: Yup.number().required("This field have to be filled!"),
-        quantity: Yup.number().required("This field have to be filled!"),
+        quantity: Yup.number().min(0, "Have to greater than 0").required("This field have to be filled!"),
         product: Yup.object({
             id: Yup.number().required("This field have to be filled!"),
             name: Yup.string().required("This field have to be filled!"),
