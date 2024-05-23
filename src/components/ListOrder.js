@@ -13,7 +13,7 @@ function ListOrder() {
     //Effects:
     useEffect(() => {
         getListOrder()
-    }, [orderList])
+    }, [])
 
 
     //Methods:
